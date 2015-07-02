@@ -1,0 +1,24 @@
+datasource:
+  primary:
+    url: jdbc:mysql://localhost/primary
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    validation-query: select 1
+  secondary:
+    url: jdbc:mysql://localhost/secondary
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    validation-query: select 1
+
+logging:
+  level:
+    org.springframework: INFO
+    org.test: DEBUG
+    com.liquibase: DEBUG
+
+liquibase:
+  change-log: classpath:/db/changelog/db.changelog-master.xml
+  enabled: true
+  url: jdbc:mysql://localhost/test
+  user: root
+
